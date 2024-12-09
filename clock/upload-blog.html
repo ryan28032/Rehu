@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Blog Post - Rehan's Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload New Blog Post</h2>
+        <form id="blogUploadForm" class="upload-form">
+            <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" id="blogTitle" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Internet Computer Technology PNG Images,  Computer Clipart, Technology Clipart, The Internet PNG Transparent Background - Pngtree">Featured Image</label>
+                <input type="file" id="blogImage" name="image" accept="image/*" required>
+                <div id="imagePreview" class="image-preview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="blogCategory">Category</label>
+                <select id="blogCategory" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="technology">Technology</option>
+                    <option value="programming">Programming</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="design">Design</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="blogContent">Blog Content</label>
+                <textarea id="blogContent" name="content" rows="10" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="blogTags">Tags (comma-separated)</label>
+                <input type="text" id="blogTags" name="tags" placeholder="e.g., javascript, web, coding">
+            </div>
+
+            <button type="submit" class="submit-btn">Publish Blog Post</button>
+        </form>
+    </div>
+</body>
+</html> 

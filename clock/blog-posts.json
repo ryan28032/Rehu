@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Getting Started with Web Development",
+        "date": "March 15, 2024",
+        "author": "Rehan",
+        "image": "Internet Computer Technology PNG Images,  Computer Clipart, Technology Clipart, The Internet PNG Transparent Background - Pngtree",
+        "excerpt": "Learn the fundamentals of web development and start your journey as a developer...",
+        "content": "Full content of the blog post goes here...",
+        "tags": ["internet", "technology"]
+    },
+    {
+        "title": "Modern CSS Techniques",
+        "date": "March 12, 2024",
+        "author": "Rehan",
+        "image": "https://via.placeholder.com/400x250",
+        "excerpt": "Explore the latest CSS features and techniques for modern web design...",
+        "content": "Full content of the blog post goes here...",
+        "tags": ["css", "design"]
+    },
+    {
+        "title": "JavaScript Best Practices",
+        "date": "March 10, 2024",
+        "author": "Rehan",
+        "image": "https://via.placeholder.com/400x250",
+        "excerpt": "Discover the best practices and tips for writing clean JavaScript code...",
+        "content": "Full content of the blog post goes here...",
+        "tags": ["javascript", "best practices"]
+    }
+] 
