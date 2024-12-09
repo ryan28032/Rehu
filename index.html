@@ -11,19 +11,17 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">R</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/logo/P.png" alt="Rehan's Logo" class="logo-img">
+                </a>
             </div>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -41,22 +39,97 @@
 
         <section id="about" class="about">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate developer with expertise in creating beautiful and functional websites. With years of experience in web development, I focus on delivering high-quality solutions that meet client needs.</p>
-                    <div class="skills">
-                        <div class="skill">
-                            <span>HTML/CSS</span>
-                            <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Add your professional photo here -->
+                    <img src="images/your-photo.jpg" alt="Rehan's Photo">
+                </div>
+                <div class="about-content">
+                    <h3>Hi, I'm Rehan</h3>
+                    <p class="about-description">
+                        [Here's your updated summary:
+
+                        ---
+                        
+                        ### Personal Information:
+                        - Name: Rehan (prefers to be called *Rehuu*).
+                        - Age: 18 years old.
+                        - Birthday: November 29.
+                        - Education: First-year student in Computer Science and Engineering at CSMSS's College of Engineering, Aurangabad.
+                        - Interests: Programming, coding, learning practical skills, and exploring topics that improve daily life.
+                        - Goal: Aspires to become a successful software engineer and contribute to innovative projects in tech.
+                        
+                        ### Coding Journey:
+                        - **Current Learning:
+                          - Beginner-level C programming.
+                          - Exploring HTML and CSS for web development basics.
+                        - **Future Goals in Coding:** Mastering advanced programming languages like Python, Java, or JavaScript for software and web development.
+                        - **Preferences:** Wants clear, beginner-friendly explanations and simple code snippets.
+                        
+                        ### Interests and Hobbies:
+                        - **Hobbies:** Enjoys exploring tech gadgets, practicing coding, and working on small projects.
+                        - **Other Interests:** Gaming, watching tech tutorials, and finding solutions to real-world problems using technology.
+                        
+                        ### Chat Preferences:
+                        - Likes short and casual conversations in Marathi written in English script.
+                        
+                        
+                        ---
+                        
+                        ] A passionate web developer with expertise in creating 
+                        modern and responsive websites. I specialize in front-end development and enjoy 
+                        turning complex problems into simple, beautiful solutions.
+                    </p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-user"></i> Full Name:</span>
+                            <span class="info-value">Rehan [Pathan]</span>
                         </div>
-                        <div class="skill">
-                            <span>JavaScript</span>
-                            <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-calendar"></i> Age:</span>
+                            <span class="info-value">[18] Years</span>
                         </div>
-                        <div class="skill">
-                            <span>React</span>
-                            <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-location-dot"></i> Location:</span>
+                            <span class="info-value">[Aurangabad, Maharashtra, india]</span>
                         </div>
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-envelope"></i> Email:</span>
+                            <span class="info-value">[rehanipathan906@gmail.com]</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-phone"></i> Phone:</span>
+                            <span class="info-value">[+91 8766680256]</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label"><i class="fas fa-graduation-cap"></i> Degree:</span>
+                            <span class="info-value">[i dont have any degree]</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h4>My Skills</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <!-- Add more skills as needed -->
+                        </div>
+                    </div>
+
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn-primary">Contact Me</a>
+                        <a href="your-resume.pdf" class="btn-secondary" download>Download CV</a>
                     </div>
                 </div>
             </div>
@@ -83,40 +156,32 @@
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio">
-            <h2 class="section-title">My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                    <div class="portfolio-overlay">
-                        <h3>Project 1</h3>
-                        <p>Web Development</p>
-                        <a href="#" class="portfolio-link">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                    <div class="portfolio-overlay">
-                        <h3>Project 2</h3>
-                        <p>UI/UX Design</p>
-                        <a href="#" class="portfolio-link">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                    <div class="portfolio-overlay">
-                        <h3>Project 3</h3>
-                        <p>Mobile App</p>
-                        <a href="#" class="portfolio-link">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="blog" class="blog">
             <h2 class="section-title">Latest Blog Posts</h2>
             <div class="blog-grid">
-                <!-- Blog posts will be dynamically inserted here -->
+                <!-- First Blog Post -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="Internet Computer Technology PNG Images,  Computer Clipart, Technology Clipart, The Internet PNG Transparent Background - Pngtree" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 20, 2024</span>
+                            <span><i class="far fa-user"></i> Rehan</span>
+                            <span><i class="far fa-folder"></i> Technology</span>
+                        </div>
+                        <h3>Your Blog Post Title</h3>
+                        <p>Write your blog post introduction here. Keep it brief but engaging to catch readers' attention...</p>
+                        <div class="blog-tags">
+                            <span>#technology</span>
+                            <span>#coding</span>
+                            <span>#webdev</span>
+                        </div>
+                        <a href="blog-post1.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Add more blog posts in the same format -->
             </div>
         </section>
 
@@ -142,9 +207,36 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/mr_rehan_pathan_18/" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <!-- YouTube (New) -->
+                <a href="https://www.youtube.com/@Rehan28032" target="_blank" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+                
+                <!-- Twitter/X -->
+                <a href="https://x.com/iamrehann18" target="_blank" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/rehan-i-pathan-708515338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/ryan28032" target="_blank" class="social-link github">
+                    <i class="fab fa-github"></i>
+                </a>
+                
+                <!-- Email -->
+                <a href="rehanipathan906@gmail.com" class="social-link email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
             <p>&copy; 2024 Rehan. All rights reserved.</p>
         </div>

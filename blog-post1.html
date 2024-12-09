@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Post Title - Rehan's Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include your header -->
+    <header class="header">
+        <!-- Your existing header content -->
+    </header>
+
+    <main class="blog-post-container">
+        <article class="blog-post">
+            <div class="blog-post-header">
+                <h1>Your How Internet Works</h1>
+                <div class="blog-meta">
+                    <span><i class="far fa-calendar"></i> March 20, 2024</span>
+                    <span><i class="far fa-user"></i> Rehan</span>
+                    <span><i class="far fa-folder"></i> Technology</span>
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <!-- Main featured image with zoom effect -->
+                <div class="featured-image-container">
+                    <img src="path/to/your/main-image.jpg" alt="Featured Image" class="featured-image">
+                </div>
+                
+                <!-- Image gallery in the post -->
+                <div class="post-gallery">
+                    <div class="gallery-item">
+                        <img src="path/to/image1.jpg" alt="Image 1" onclick="openLightbox(this)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="path/to/image2.jpg" alt="Image 2" onclick="openLightbox(this)">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="path/to/image3.jpg" alt="Image 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
+
+                <!-- Lightbox for images -->
+                <div id="lightbox" class="lightbox">
+                    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+                    <img id="lightbox-img" src="" alt="Lightbox Image">
+                    <div class="lightbox-caption"></div>
+                </div>
+
+                <div class="post-text">
+                    <h2>Introduction</h2>
+                    <p>**Introduction to the Internet**  
+
+                        The internet is a vast, interconnected network that allows devices worldwide to communicate and share information. It connects millions of computers, servers, and devices using standardized protocols. Introduced in the late 20th century, the internet has revolutionized how we access information, communicate, and perform daily tasks. From browsing websites to sending emails, streaming videos, and online shopping, the internet powers countless services. Its infrastructure relies on a combination of physical hardware (like cables and satellites) and software protocols that ensure seamless global connectivity. Today, it is an essential part of modern life, shaping how we live, learn, and work.  ...</p>
+
+                    <h2>Main Content</h2>
+                    <p>**How the Internet Works**  
+
+                        The internet is a global network connecting devices to share information. Here's how it works:  
+                        
+                        1. IP Address & DNS: Every device has a unique IP address. Domain Name System (DNS) translates website names (like google.com) into IP addresses.  
+                        2. Data Packets: Information is broken into small packets that travel through routers to reach their destination.  
+                        3. Servers & Clients: Servers store data (websites, files), and clients (your device) request and display it.  
+                        4. Protocols: Protocols like HTTP (web browsing) and TCP/IP ensure data is sent and received correctly.  
+                        5. Infrastructure: Data travels via cables, satellites, and wireless networks, maintained by ISPs (Internet Service Providers).  
+                        
+                        It’s a massive system of devices working together to provide instant access to information!...</p>
+                    
+                    <h2>Conclusion</h2>
+                    <p>**Conclusion**  
+
+                        The internet is a revolutionary technology that connects the world by enabling the seamless exchange of information and services. It has transformed communication, education, business, and entertainment, becoming a vital part of modern life. With its ability to bring people closer, foster innovation, and create endless opportunities, the internet is an essential tool for progress in today's digital age....</p>
+                </div>
+
+                <div class="blog-tags">
+                    <span>#technology</span>
+                    <span>#coding</span>
+                    <span>#webdev</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="share-buttons">
+            <h3>Share this post</h3>
+            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+    </main>
+
+    <!-- Include your footer -->
+    <footer class="footer">
+        <!-- Your existing footer content -->
+    </footer>
+</body>
+</html> 
