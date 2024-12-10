@@ -2288,3 +2288,45 @@ body.menu-open {
         scroll-behavior: auto !important;
     }
 }
+
+/* Ensure visibility of auth links */
+.auth-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login-btn, .signup-btn {
+    background: transparent;
+    border: 1px solid var(--neon-red);
+    color: var(--neon-red);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background: var(--neon-red);
+    color: var(--pure-black);
+    box-shadow: 
+        0 0 10px var(--neon-red),
+        0 0 20px var(--neon-red);
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .auth-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .login-btn, .signup-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
