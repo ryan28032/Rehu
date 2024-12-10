@@ -139,37 +139,70 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links a');
+    const body = document.body;
+    let overlay;
 
-    // Toggle menu
-    hamburger?.addEventListener('click', function() {
-        this.classList.toggle('active');
+    // Create overlay element
+    function createOverlay() {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+    }
+    createOverlay();
+
+    // Toggle menu function
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
-    });
+        overlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    }
+
+    // Event listeners
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', toggleMenu);
 
     // Close menu when clicking a link
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
         });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+    // Handle escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            toggleMenu();
         }
     });
 
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        }, 250);
     });
+
+    // Add touch swipe to close
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    navLinks.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    navLinks.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX > touchEndX + 50) { // Swipe left
+            toggleMenu();
+        }
+    }, false);
 });
 
 // Add smooth scrolling
