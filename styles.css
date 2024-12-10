@@ -5,6 +5,8 @@
     --pure-black: #000000;
     --dark-gray: #111111;
     --text-white: #ffffff;
+    --mobile-width: 480px;
+    --tablet-width: 768px;
 }
 
 * {
@@ -2131,4 +2133,158 @@ body.menu-open {
     background: var(--neon-red);
     border-radius: 5px;
     box-shadow: 0 0 5px var(--neon-red);
+}
+
+/* Responsive Design Styles */
+:root {
+    --mobile-width: 480px;
+    --tablet-width: 768px;
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+    /* Search Container Mobile Styles */
+    .search-wrapper {
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: calc(100vw - 2rem);
+        margin: 0 auto;
+    }
+
+    .search-container:hover,
+    .search-container:focus-within {
+        width: 100%;
+        transform: none;
+    }
+
+    /* Search Results Mobile */
+    .search-results {
+        width: calc(100vw - 2rem);
+        left: 50%;
+        transform: translateX(-50%);
+        max-height: 60vh;
+    }
+
+    .result-item {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Contact Form Mobile */
+    .contact-container {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* General Mobile Typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    p { font-size: 0.9rem; }
+
+    /* Mobile Spacing */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    /* Mobile Touch Targets */
+    .search-icon,
+    .search-close {
+        padding: 10px;
+        font-size: 1.4rem;
+    }
+
+    /* Mobile Scrollbar */
+    ::-webkit-scrollbar {
+        width: 3px;
+    }
+}
+
+/* Tablet Adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .search-container {
+        width: 200px;
+    }
+
+    .search-container:hover,
+    .search-container:focus-within {
+        width: 250px;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .search-results.active {
+        max-height: 200px;
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .search-container:hover {
+        transform: none;
+    }
+
+    .result-item:hover {
+        background: rgba(255, 51, 51, 0.05);
+        transform: none;
+    }
+
+    .search-icon:active,
+    .search-close:active {
+        transform: scale(0.95);
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .search-container {
+        border-width: 1px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .search-container {
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Save Data Mode */
+@media (prefers-reduced-data: reduce) {
+    .search-container,
+    .result-item {
+        transition: none;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
