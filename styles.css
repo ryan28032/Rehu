@@ -678,3 +678,767 @@ input:focus, textarea:focus {
     text-align: center;
     margin-top: 1rem;
 }
+
+/* Authentication Styles */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.auth-box {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: var(--background-dark);
+    color: var(--text-primary);
+}
+
+.auth-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    background: #ff4d7d;
+    transform: translateY(-2px);
+}
+
+.auth-separator {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.auth-separator::before,
+.auth-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #333;
+}
+
+.auth-separator::before { left: 0; }
+.auth-separator::after { right: 0; }
+
+.social-auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-auth button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.google-auth {
+    background: #DB4437;
+    color: white;
+}
+
+.github-auth {
+    background: #333;
+    color: white;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Auth Links in Navigation */
+.auth-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background: transparent;
+    border: 1px solid #00cc44;
+    color: #00cc44;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.signup-btn {
+    background: transparent;
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.login-btn:hover {
+    background: #00cc44;
+    color: var(--background-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 204, 68, 0.3);
+}
+
+.signup-btn:hover {
+    background: #ff3333;
+    color: var(--background-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+}
+
+/* Icon animations */
+.login-btn i, .signup-btn i {
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover i {
+    transform: rotate(360deg);
+    color: var(--background-dark);
+}
+
+.signup-btn:hover i {
+    transform: rotate(360deg);
+    color: var(--background-dark);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .auth-links {
+        margin-left: 0;
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .login-btn, .signup-btn {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Enhanced Navigation Icons */
+.nav-item, .login-btn, .signup-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Icon animations and effects */
+.nav-item i, .login-btn i, .signup-btn i {
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover i {
+    transform: translateY(-2px);
+    color: var(--primary-color);
+}
+
+/* Tooltip effect */
+.nav-item::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--background-dark);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Enhanced auth buttons */
+.login-btn, .signup-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::before, .signup-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.login-btn:hover::before, .signup-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.login-btn:hover i, .signup-btn:hover i {
+    transform: rotate(360deg);
+}
+
+/* Active state for navigation */
+.nav-item.active {
+    background: rgba(255, 51, 102, 0.1);
+    color: var(--primary-color);
+}
+
+.nav-item.active i {
+    color: var(--primary-color);
+}
+
+/* Pulse effect for notifications */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.has-notification i {
+    animation: pulse 2s infinite;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-item::after {
+        display: none;
+    }
+    
+    .nav-item, .login-btn, .signup-btn {
+        padding: 0.6rem 1rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+}
+
+/* Enhanced Button Effects with Glowing Shadows */
+.nav-item, .login-btn, .signup-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Home button glow */
+a[href="#home"]:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3),
+                0 0 25px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* About button glow */
+a[href="#about"]:hover {
+    box-shadow: 0 0 15px rgba(64, 224, 208, 0.3),
+                0 0 25px rgba(64, 224, 208, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Blog button glow */
+a[href="#blog"]:hover {
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.3),
+                0 0 25px rgba(147, 112, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Contact button glow */
+a[href="#contact"]:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3),
+                0 0 25px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Login button enhanced glow */
+.login-btn {
+    border: 1px solid #00cc44;
+    color: #00cc44;
+}
+
+.login-btn:hover {
+    background: #00cc44;
+    color: var(--background-dark);
+    box-shadow: 0 0 15px rgba(0, 204, 68, 0.4),
+                0 0 25px rgba(0, 204, 68, 0.3),
+                0 0 35px rgba(0, 204, 68, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Signup button enhanced glow */
+.signup-btn {
+    border: 1px solid #ff3333;
+    color: #ff3333;
+}
+
+.signup-btn:hover {
+    background: #ff3333;
+    color: var(--background-dark);
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.4),
+                0 0 25px rgba(255, 51, 51, 0.3),
+                0 0 35px rgba(255, 51, 51, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Pulsing glow animation */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 5px currentColor,
+                    0 0 10px currentColor;
+    }
+    50% {
+        box-shadow: 0 0 15px currentColor,
+                    0 0 25px currentColor;
+    }
+    100% {
+        box-shadow: 0 0 5px currentColor,
+                    0 0 10px currentColor;
+    }
+}
+
+/* Active state glow */
+.nav-item.active {
+    animation: glowPulse 2s infinite;
+}
+
+/* Icon glow effects */
+.nav-item:hover i, 
+.login-btn:hover i, 
+.signup-btn:hover i {
+    filter: drop-shadow(0 0 5px currentColor);
+    transform: translateY(-2px) rotate(360deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-item, .login-btn, .signup-btn {
+        box-shadow: none;
+    }
+    
+    .nav-item:hover, 
+    .login-btn:hover, 
+    .signup-btn:hover {
+        box-shadow: 0 0 10px currentColor;
+    }
+}
+
+/* Enhanced Interactive Animations */
+.nav-item, .login-btn, .signup-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple Effect */
+.nav-item::after,
+.login-btn::after,
+.signup-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.nav-item:hover::after,
+.login-btn:hover::after,
+.signup-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Apply animations on hover */
+.nav-item:hover {
+    animation: float 2s infinite ease-in-out;
+}
+
+.login-btn:hover {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.signup-btn:hover {
+    animation: shake 0.8s ease-in-out;
+}
+
+/* Icon specific animations */
+.nav-item i {
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover i {
+    animation: rotate 1s ease-in-out;
+}
+
+/* Glowing border animation */
+@keyframes glowingBorder {
+    0% { box-shadow: 0 0 5px currentColor; }
+    50% { box-shadow: 0 0 20px currentColor; }
+    100% { box-shadow: 0 0 5px currentColor; }
+}
+
+/* Sliding background animation */
+@keyframes slideBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Apply enhanced hover effects */
+.nav-item:hover,
+.login-btn:hover,
+.signup-btn:hover {
+    animation: glowingBorder 1.5s infinite;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: slideBackground 3s linear infinite;
+}
+
+/* Text reveal animation */
+.nav-item span,
+.login-btn span,
+.signup-btn span {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item:hover span::after,
+.login-btn:hover span::after,
+.signup-btn:hover span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-item, .login-btn, .signup-btn {
+        animation: none;
+    }
+    
+    .nav-item:hover,
+    .login-btn:hover,
+    .signup-btn:hover {
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+}
+
+/* Modern About Section Styles */
+.about {
+    padding: 6rem 2rem;
+    background: var(--background-dark);
+    min-height: 100vh;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+}
+
+/* Profile Card Styles */
+.profile-card {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image-wrapper:hover .profile-overlay {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    color: var(--primary-color);
+}
+
+/* Info Grid Styles */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.info-item {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #ff6b99);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content > * {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
