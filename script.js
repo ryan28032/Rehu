@@ -140,69 +140,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
-    let overlay;
 
-    // Create overlay element
-    function createOverlay() {
-        overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
-    }
-    createOverlay();
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
 
-    // Toggle menu function
-    function toggleMenu() {
-        hamburger.classList.toggle('active');
+    // Toggle menu
+    hamburger?.addEventListener('click', function() {
+        this.classList.toggle('active');
         navLinks.classList.toggle('active');
         overlay.classList.toggle('active');
         body.classList.toggle('menu-open');
-    }
-
-    // Event listeners
-    hamburger.addEventListener('click', toggleMenu);
+    });
 
     // Close menu when clicking overlay
-    overlay.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    });
 
     // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            toggleMenu();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('menu-open');
         });
     });
-
-    // Handle escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-            toggleMenu();
-        }
-    });
-
-    // Handle resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                toggleMenu();
-            }
-        }, 250);
-    });
-
-    // Add touch swipe to close
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    navLinks.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, false);
-
-    navLinks.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX > touchEndX + 50) { // Swipe left
-            toggleMenu();
-        }
-    }, false);
 });
 
 // Add smooth scrolling

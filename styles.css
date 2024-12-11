@@ -1679,291 +1679,136 @@ a[href="#contact"]:hover {
 /* Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: block;
+        z-index: 1001;
     }
 
+    /* Navigation Links Container */
     .nav-links {
         position: fixed;
         top: 70px; /* Adjust based on your header height */
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: var(--background-dark);
+        background: var(--pure-black);
+        display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 2rem;
-        transition: 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
     }
 
+    /* Active Navigation State */
     .nav-links.active {
         left: 0;
-        opacity: 1;
-        visibility: visible;
     }
 
-    .nav-links li {
-        margin: 1.5rem 0;
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: all 0.3s ease;
-    }
-
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Stagger animation for menu items */
-    .nav-links li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links li:nth-child(2) { transition-delay: 0.2s; }
-    .nav-links li:nth-child(3) { transition-delay: 0.3s; }
-    .nav-links li:nth-child(4) { transition-delay: 0.4s; }
-    .nav-links li:nth-child(5) { transition-delay: 0.5s; }
-
-    /* Hamburger Animation */
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* Auth buttons in mobile */
+    /* Auth Links Container */
     .auth-links {
+        display: flex !important;
         flex-direction: column;
         width: 100%;
         gap: 1rem;
+        margin-top: 2rem;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
-    .login-btn, .signup-btn {
+    /* Auth Buttons */
+    .login-btn,
+    .signup-btn {
+        display: flex;
         width: 100%;
-        text-align: center;
         justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin: 5px 0;
+        font-size: 1.1rem;
+        border: 1px solid var(--neon-red);
+        background: transparent;
+        color: var(--neon-red);
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Button Icons */
+    .login-btn i,
+    .signup-btn i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Button Hover/Active States */
+    .login-btn:hover,
+    .signup-btn:hover {
+        background: var(--neon-red);
+        color: var(--pure-black);
+        box-shadow: 
+            0 0 10px var(--neon-red),
+            0 0 20px var(--neon-red);
+    }
+
+    .login-btn:active,
+    .signup-btn:active {
+        transform: scale(0.98);
+    }
+
+    /* Navigation Items */
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Prevent Body Scroll When Menu is Open */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Overlay Background */
+    .nav-overlay {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
-/* Prevent scrolling when menu is open */
-body.menu-open {
-    overflow: hidden;
-}
+/* Additional Mobile Optimizations */
+@media screen and (max-width: 480px) {
+    .login-btn,
+    .signup-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
 
-/* Overlay effect */
-.nav-overlay {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Enhanced Button Effects */
-.login-btn, .signup-btn {
-    background: transparent;
-    border: 1px solid #ff3333;
-    color: #ff3333;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Glowing effect */
-.login-btn::before, .signup-btn::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #ff3333, #ff6666, #ff3333);
-    z-index: -1;
-    border-radius: 8px;
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-/* Ripple effect */
-.login-btn::after, .signup-btn::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 51, 51, 0.2);
-    border-radius: 50%;
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-/* Hover effects */
-.login-btn:hover, .signup-btn:hover {
-    color: white;
-    transform: translateY(-3px);
-    border-color: transparent;
-}
-
-.login-btn:hover::before, .signup-btn:hover::before {
-    opacity: 1;
-    animation: glowing 1.5s infinite;
-}
-
-.login-btn:hover::after, .signup-btn:hover::after {
-    width: 300px;
-    height: 300px;
-}
-
-/* Icon animation */
-.login-btn i, .signup-btn i {
-    transition: transform 0.3s ease;
-}
-
-.login-btn:hover i, .signup-btn:hover i {
-    animation: iconBounce 0.5s ease infinite alternate;
-}
-
-/* Text shine effect */
-.login-btn span, .signup-btn span {
-    position: relative;
-}
-
-.login-btn:hover span::before, .signup-btn:hover span::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
-    left: -100%;
-    animation: shine 1s linear;
-}
-
-/* Animations */
-@keyframes glowing {
-    0% { filter: brightness(1) blur(1px); }
-    50% { filter: brightness(1.2) blur(2px); }
-    100% { filter: brightness(1) blur(1px); }
-}
-
-@keyframes iconBounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-3px); }
-}
-
-@keyframes shine {
-    to { left: 200%; }
-}
-
-/* Active state */
-.login-btn:active, .signup-btn:active {
-    transform: translateY(0);
-}
-
-/* Focus state */
-.login-btn:focus, .signup-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.3);
-}
-
-/* Loading state */
-.login-btn.loading, .signup-btn.loading {
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-.login-btn.loading i, .signup-btn.loading i {
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* Success state */
-.login-btn.success, .signup-btn.success {
-    background: #ff3333;
-    color: white;
-}
-
-.login-btn.success i, .signup-btn.success i {
-    animation: successPop 0.3s ease;
-}
-
-@keyframes successPop {
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-/* Introduction Text Styles */
-.intro-text {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-    text-shadow: 
-        0 0 5px #ff3333,
-        0 0 10px #ff3333,
-        0 0 15px #ff3333;
-    animation: neonPulse 1.5s ease-in-out infinite alternate;
-}
-
-.intro-text span {
-    color: #ff3333;
-}
-
-/* Smaller screens */
-@media (max-width: 768px) {
-    .intro-text {
-        font-size: 2rem;
-        letter-spacing: 1px;
+    .nav-links {
+        padding: 1.5rem;
     }
 }
 
-/* Animation for the neon effect */
-@keyframes neonPulse {
-    from {
-        text-shadow: 
-            0 0 5px #ff3333,
-            0 0 10px #ff3333,
-            0 0 15px #ff3333;
+/* Landscape Mode Adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .nav-links {
+        padding: 1rem;
+        overflow-y: scroll;
     }
-    to {
-        text-shadow: 
-            0 0 2px #ff3333,
-            0 0 5px #ff3333,
-            0 0 10px #ff3333;
+
+    .auth-links {
+        margin-top: 1rem;
     }
 }
-
-/* Make sure your HTML has this structure */
-/*
-<h1 class="intro-text">
-    Hi, I am <span>Rehan</span>
-</h1>
-*/
